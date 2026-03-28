@@ -2,7 +2,7 @@
 
 A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill for generating professional, branded `.docx` reports using Node.js.
 
-Give Claude a prompt like **"create a report summarizing this data"** and it will generate a polished Word document with your organization's branding — tables, headings, page numbers, and all.
+Give Claude a prompt like **"create a report summarizing this data using the docx report skill"** and it will generate a polished Word document with your organization's branding — tables, headings, page numbers, and all.
 
 ![Example report output](references/example-output.png)
 
