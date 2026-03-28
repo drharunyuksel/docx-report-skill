@@ -93,7 +93,7 @@ All modules read from `brand-config.js` — no hardcoded colors or fonts anywher
 ## Requirements
 
 - Node.js 18+
-- Claude Code (or any Claude-powered coding agent that supports skills)
+- Claude Code (or any AI agent that supports skills)
 
 ## License
 
