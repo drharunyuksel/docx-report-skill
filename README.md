@@ -59,7 +59,7 @@ See `references/color-palette.md` for tips on choosing colors.
 Ask Claude to create a report:
 
 ```
-Create a .docx report summarizing the Q1 sales data
+Create a .docx report summarizing the Q1 sales data using the docx report skill
 ```
 
 Claude will generate a Node.js script using the shared helpers, run it, and produce a `.docx` file.
