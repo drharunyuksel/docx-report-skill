@@ -44,7 +44,7 @@ Sketch the section order:
 
 ### Step 3: Generate the Report Script
 
-Create a JS file (e.g., `reports/my_report.js`) that:
+If the user doesn't specify an output location, default to the `reports/` directory. Create it if it doesn't exist (`mkdir -p reports`), then create a JS file (e.g., `reports/my_report.js`) that:
 
 ```javascript
 const path = require("path");
@@ -71,6 +71,24 @@ Replace `<skill-path>` with the actual path to this skill directory (e.g., `/pat
 ```bash
 node reports/my_report.js
 ```
+
+### Step 5: Present & Iterate
+
+**After every run** (first creation and every subsequent edit), tell the user:
+
+> "Here's your report. Take a look — if you want any changes, let me know. Once you're happy with it, I'll clean up the build script."
+
+Always ask this after each iteration — not just the first time. If the user requests changes, modify the existing JS file and rerun it. Do **not** recreate the script from scratch — editing is faster and preserves context.
+
+### Step 6: Clean Up
+
+Once the user is satisfied with the report, delete the JS build script:
+
+```javascript
+fs.unlinkSync("reports/my_report.js");
+```
+
+The `.docx` file is the deliverable. The build script is a temporary artifact.
 
 ## Helper API Reference
 
@@ -183,6 +201,7 @@ children.push(externalLink("View Spreadsheet", "https://docs.google.com/spreadsh
 - [ ] Header and footer appear on every page
 - [ ] No direct `new Document()` usage — uses `buildDocument()`
 - [ ] No direct `require("docx")` or `require(".../node_modules/docx")` — use only helper functions and re-exports
+- [ ] Build script deleted after user approves the final report
 
 ## Example
 
